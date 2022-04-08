@@ -1,0 +1,138 @@
+/******** VARIABLES *******/
+:root {
+    --color-cyan: hsl(179, 62%, 43%);
+    --color-yellow: hsl(71, 73%, 54%);
+    --color-gray: hsl(204, 43%, 93%);
+    --color-blue: hsl(218, 22%, 67%);
+}
+
+/************ GENERALS ***********/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    padding: 1.25rem;
+    background-color: var(--color-gray);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: var(--color-gray);
+    font-size: 15px;
+}
+
+/************* CONTAINER *******************/
+.main-container {
+    display: grid;
+    margin: 10vh auto;
+    max-width: 600px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "section1 section1"
+    "section2 section3";
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/******** SECTION 1 ******/
+.section1 {
+    grid-area: section1;
+    background-color: #FFF;
+    padding: 1.2rem 3rem 1rem 3rem;
+    border-radius: .3rem .3rem 0 0;
+}
+
+.section1 h1 {
+    color: var(--color-cyan);
+}
+
+.section1 span {
+    color: var(--color-yellow);
+    font-weight: 700;
+}
+
+.section1 p {
+    color: var(--color-blue);
+    line-height: 1.5;
+}
+
+/*********** SECTION 2 ***********/
+.section2 {
+    grid-area: section2;
+    background-color: var(--color-cyan);
+    padding: 1.2rem 2rem 1.2rem 2.1rem;
+    border-radius: 0 0 0 .3rem;
+}
+
+.section2 h2 {
+    color: #FFF;
+    font-size: 18px;
+}
+
+.section2 strong {
+    color: #FFF;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.section2 span {
+    color: var(--color-gray);
+    margin-left: 2px;
+    font-size: 12px;
+}
+
+.section2 p {
+    color: var(--color-gray);
+    font-weight: 400;
+    font-size: 15px;
+}
+
+/*********** Button section 2 ********/
+.btn {
+    width: 100%;
+    margin-top: 7px;
+    background: var(--color-yellow);
+    border: none;
+    color: #FFF;
+    padding: .7rem;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: .3rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+/******** SECTION 3 *****/
+.section3 {
+    grid-area: section3;
+    background-color: hsla(179, 62%, 43%, 0.8);
+    padding: 1.2rem 2rem 1.2rem 2.1rem;
+    border-radius: 0 0 .3rem 0;
+}
+
+.section3 h2 {
+    color: #FFF;
+    font-size: 18px;
+}
+
+/********** MEDIA QUERY **************/
+@media (max-width: 500px) {
+    .main-container {
+        margin: 0 auto;
+        grid-template-areas: 
+        "section1 section1"
+        "section2 section2"
+        "section3 section3";
+    }
+
+    .section2 {
+        border-radius: 0;
+    }
+
+    .section3 {
+        border-radius: 0 0 .4rem .4rem;
+    }
+}
